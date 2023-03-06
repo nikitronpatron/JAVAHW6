@@ -2,21 +2,22 @@ public class Cat
 {
     private String name;
     private int appetite;
-    private boolean satiety;
-
-    public Cat(String name)
-    {
-        this(name, 10);
-        // this.name = name;
-        // this.appetite = 10;
-        // satiety = false;
-    }
+    private int satiety;
+    private int decrease;
+    private int increase;
+    // public Cat(String name)
+    // {
+    //     this(name);
+    //     // this.name = name;
+    //     // this.appetite = 10;
+    //     // satiety = false;
+    // }
 
     public Cat(String name, int appetite)
     {
         this.name = name;
         this.appetite = appetite;
-        satiety = false;
+        satiety = 4;
     }
 
     // new Thread(() ->
@@ -38,15 +39,17 @@ public class Cat
 
     public void eat(Plate plate)
     {
-        if(!satiety)
+        if(satiety < 5)
         {
-            satiety = plate.decreaseFood(appetite);
+            decrease = plate.decreaseFood(appetite);
+            increase = plate.increaseFood(appetite, 45);
+            satiety += appetite;
         }
     }
 
     public void makeHungry()
     {
-        satiety = false;
+        satiety -= 1;
     }
 
     @Override
@@ -54,5 +57,9 @@ public class Cat
     {
         return name + " {appetite: " + appetite + ", satiety: " + satiety + "}.";
     }
+    // public String toString()
+    // {
+    //     return cats;
+    // }
 
 }

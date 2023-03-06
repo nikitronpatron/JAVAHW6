@@ -7,14 +7,22 @@ public class Plate
         this.food = food;
     }
 
-    public boolean decreaseFood(int foodToDecrease)
+    public int decreaseFood(int foodToDecrease)
     {
         if(food >= foodToDecrease)
         {
             food = food - foodToDecrease;
-            return true;
         }
-        return false;
+        return food;
+    }
+
+    public int increaseFood(int foodToDecrease,int foodToIncrease)
+    {
+        if(food <= foodToDecrease)
+        {
+            food = food + foodToIncrease;
+        }
+        return food;
     }
 
     @Override
