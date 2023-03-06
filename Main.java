@@ -31,7 +31,7 @@ public class Main
             barsic.eat(plate);
             tuzic.eat(plate);
 
-            // System.out.println(plate);
+            System.out.println(plate);
             System.out.println(murzic);
             System.out.println(barsic);
             System.out.println(tuzic);
